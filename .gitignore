@@ -1,3 +1,2 @@
-.meteor
-private/*.json
-packages/*
+node_modules/
+private/*
