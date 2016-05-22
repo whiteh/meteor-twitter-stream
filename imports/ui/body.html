@@ -1,0 +1,17 @@
+<body>
+  <div class="container">
+    <header>
+      <h1>Tweets</h1>
+    </header>
+
+    <ul>
+      {{#each tweets}}
+        {{> tweet}}
+      {{/each}}
+    </ul>
+  </div>
+</body>
+
+<template name="tweet">
+  <li>{{text}}</li>
+</template>
