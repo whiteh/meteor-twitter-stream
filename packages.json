@@ -1,4 +1,5 @@
 {
-  "twit" : "1.1.19",
-  "nlp_compromise" : "4.10.6"
+  "twit" : "2.2.4",
+  "nlp_compromise" : "4.10.6",
+  "oauthio" : "0.3.3"
 }

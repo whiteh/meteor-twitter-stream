@@ -4,7 +4,7 @@
       <h1>Tweets</h1>
     </header>
 
-    <ul>
+    <ul class="tweets">
       {{#each tweets}}
         {{> tweet}}
       {{/each}}
@@ -13,5 +13,9 @@
 </body>
 
 <template name="tweet">
-  <li>{{text}}</li>
+  <li class="tweet">
+    <div class='tweet-text'>{{text}}</div>
+    <div class='tweet-author'>{{user.name}}</div>
+    <div class='tweet-dttm'>{{created_at}}</div>
+  </li>
 </template>
