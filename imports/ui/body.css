@@ -1,0 +1,21 @@
+ul.tweets {
+  border: 1px solid #ccc;
+  list-style-type: none;
+}
+
+ul.tweets > li.tweet {
+  border-bottom: 1px solid #ccc;
+  padding: 10px 10px 30px 10px;
+}
+
+ul.tweets > li.tweet > div.tweet-author {
+  color: #444;
+  display: inline;
+  margin: 10px;
+}
+
+ul.tweets > li.tweet > div.tweet-dttm {
+  color: #444;
+  display: inline;
+  margin: 10px;
+}

@@ -1,0 +1,21 @@
+<body>
+  <div class="container">
+    <header>
+      <h1>Tweets</h1>
+    </header>
+
+    <ul class="tweets">
+      {{#each tweets}}
+        {{> tweet}}
+      {{/each}}
+    </ul>
+  </div>
+</body>
+
+<template name="tweet">
+  <li class="tweet">
+    <div class='tweet-text'>{{text}}</div>
+    <div class='tweet-author'>{{user.name}}</div>
+    <div class='tweet-dttm'>{{created_at}}</div>
+  </li>
+</template>
