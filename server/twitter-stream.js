@@ -2,6 +2,21 @@ import { Tweets } from '../imports/api/tweets.js';
 var nlp, Twit, conf;
 if (Meteor.isServer) {
   Meteor.methods({
+    tagTweet: function(data) {
+      var text = data.text,
+          val = "",
+          delim = "";
+      nlp.text(text).terms().forEach(function(token){
+          var elem = "<span class='";
+          elem += token.tag.toLowerCase()+"'>";
+          elem += token.text+"</span>"
+          val += delim + elem;
+          delim = " ";
+      });
+      console.log(val);
+      return val;
+    },
+
     handleTweet: function(data) {
       nlp.text(data.text)
          .sentences
@@ -18,11 +33,25 @@ if (Meteor.isServer) {
       }
     },
     getTimeline: function() {
-      var access_token = Meteor.user().services.twitter.accessToken;
-      var access_token_secret = Meteor.user().services.twitter.accessTokenSecret;
+      var access_token, access_token_secret;
+      if (!Meteor.user()) {
+        return;
+      }
+      access_token = Meteor.user().services.twitter.accessToken;
+      access_token_secret = Meteor.user().services.twitter.accessTokenSecret;
 
-      var insertTweet = Meteor.bindEnvironment(function(data){
-        Tweets.insert(data);
+      var addTweet = Meteor.bindEnvironment(function(data){
+        var item = Tweets.findOne({ id: data.id });
+        if (typeof item === "undefined") {
+          data.rel_users = [Meteor.userId()];
+          Tweets.insert(data);
+          return;
+        }
+        Tweets.update(
+          {_id: item._id},
+          { $addToSet: { rel_users: [Meteor.user().id ] } }
+        );
+
       });
 
       var T = new Twit({
@@ -38,7 +67,7 @@ if (Meteor.isServer) {
         .then(function (result) {
           console.log(result.data.length + " tweets received");
           result.data.forEach(function(data){
-            insertTweet(data);
+            addTweet(data);
           })
         });
     }
