@@ -1,0 +1,31 @@
+<body>
+  <div class="container">
+    <div>
+      <h1>Tweets</h1>
+      <div class="account">{{> loginButtons}}</div>
+    </div>
+
+    {{#if currentUser }}
+      <ul class="collection tweets">
+        {{#each tweets}}
+          {{> tweet}}
+        {{/each}}
+      </ul>
+    {{else}}
+    <p>Welcome! Login to continue...</p>
+    {{/if}}
+
+
+  </div>
+</body>
+
+<template name="tweet">
+  <li class="collection-item avatar">
+    <img src="{{user.profile_image_url_https}}" alt="" class="circle">
+      {{#each terms}}
+      <span class='title'><span class='{{tag}}'>{{text}}</span></span>
+      {{/each}}
+    <div class='tweet-author'>{{user.name}}</div>
+    <div class='tweet-dttm'>{{created_at}}</div>
+  </li>
+</template>
