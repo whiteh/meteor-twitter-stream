@@ -5,7 +5,8 @@ Requires npm container
 `meteor add materialize:materialize`
 
 Add `private/twitter.json` with the relevant twitter credentials.
-```{
+```
+{
      "consumer": {
          "key": "xxx",
          "secret": "xxx"
@@ -14,5 +15,5 @@ Add `private/twitter.json` with the relevant twitter credentials.
          "key": "xxx",
          "secret": "xxx"
      },
-     "hashtag": "#javascript"
- }```
+ }
+ ```
