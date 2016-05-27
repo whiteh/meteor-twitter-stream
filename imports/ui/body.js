@@ -4,9 +4,11 @@ import { Tweets } from '../api/tweets.js';
 
 import './body.html';
 import './body.css';
+
 Template.body.helpers({
   tweets() {
     if (Meteor.userId()) {
+      console.log(Tweets.findOne({}))
       return Tweets.find({ rel_users: Meteor.userId() }, {created_at: -1});
     } else {
       return [{

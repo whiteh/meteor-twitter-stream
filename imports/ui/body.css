@@ -1,3 +1,7 @@
+body {
+  font-family: arial;
+}
+
 ul.tweets {
   border: 1px solid #ccc;
   list-style-type: none;
@@ -18,4 +22,10 @@ ul.tweets > li.tweet > div.tweet-dttm {
   color: #444;
   display: inline;
   margin: 10px;
+}
+
+ul.tweets > li.tweet > div.tweet-text > span.noun {
+  text-decoration: underline;
+    -moz-text-decoration-color: red; /* Code for Firefox */
+    text-decoration-color: red;
 }

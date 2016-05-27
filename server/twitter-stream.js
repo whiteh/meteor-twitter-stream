@@ -6,15 +6,16 @@ if (Meteor.isServer) {
       var text = data.text,
           val = "",
           delim = "";
+
+      data.terms = [];
+
       nlp.text(text).terms().forEach(function(token){
-          var elem = "<span class='";
-          elem += token.tag.toLowerCase()+"'>";
-          elem += token.text+"</span>"
-          val += delim + elem;
-          delim = " ";
+        //console.log(token);
+          var obj = {text: token.text, norm: token.normal};
+          obj.tag = token.tag ? token.tag.toLowerCase() : null;
+          data.terms.push(obj);
       });
-      console.log(val);
-      return val;
+      return data
     },
 
     handleTweet: function(data) {
@@ -44,6 +45,7 @@ if (Meteor.isServer) {
         var item = Tweets.findOne({ id: data.id });
         if (typeof item === "undefined") {
           data.rel_users = [Meteor.userId()];
+          data = Meteor.call("tagTweet", data);
           Tweets.insert(data);
           return;
         }

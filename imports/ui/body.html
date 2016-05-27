@@ -10,11 +10,18 @@
       {{/each}}
     </ul>
   </div>
+
+  <script type="text/javascript" src = "/public/nlp-compromise/src/index.js"></script>
 </body>
 
 <template name="tweet">
   <li class="tweet">
-    <div class='tweet-text'>{{text}}</div>
+    <div class='tweet-text'>
+      {{#each terms}}
+      <span class='{{tag}}'>{{text}}</span>
+      {{/each}}
+    </div>
+    <!--<div class='tweet-text'>{{text}}</div>-->
     <div class='tweet-author'>{{user.name}}</div>
     <div class='tweet-dttm'>{{created_at}}</div>
   </li>
