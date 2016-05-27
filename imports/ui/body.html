@@ -1,17 +1,22 @@
 <body>
   <div class="container">
-    <header>
+    <div>
       <h1>Tweets</h1>
-    </header>
+      <div class="account">{{> loginButtons}}</div>
+    </div>
 
-    <ul class="collection tweets">
-      {{#each tweets}}
-        {{> tweet}}
-      {{/each}}
-    </ul>
+    {{#if currentUser }}
+      <ul class="collection tweets">
+        {{#each tweets}}
+          {{> tweet}}
+        {{/each}}
+      </ul>
+    {{else}}
+    <p>Welcome! Login to continue...</p>
+    {{/if}}
+
+
   </div>
-
-  <script type="text/javascript" src = "/public/nlp-compromise/src/index.js"></script>
 </body>
 
 <template name="tweet">

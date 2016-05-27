@@ -1,43 +1,9 @@
-<<<<<<< HEAD
-body {
-  font-family: arial;
+h1{
+  width:20%;
+  display:inline;
 }
-
-=======
-<<<<<<< Updated upstream
->>>>>>> front-end
-ul.tweets {
-  border: 1px solid #ccc;
-  list-style-type: none;
+div.account {
+    margin-top: 20px;
+   float:right;
+   display:inline;
 }
-
-ul.tweets > li.tweet {
-  border-bottom: 1px solid #ccc;
-  padding: 10px 10px 30px 10px;
-}
-
-ul.tweets > li.tweet > div.tweet-author {
-  color: #444;
-  display: inline;
-  margin: 10px;
-}
-
-ul.tweets > li.tweet > div.tweet-dttm {
-  color: #444;
-  display: inline;
-  margin: 10px;
-}
-<<<<<<< HEAD
-
-ul.tweets > li.tweet > div.tweet-text > span.noun {
-  text-decoration: underline;
-    -moz-text-decoration-color: red; /* Code for Firefox */
-    text-decoration-color: red;
-}
-=======
-=======
-body {
-  font-family: arial;
-}
->>>>>>> Stashed changes
->>>>>>> front-end
