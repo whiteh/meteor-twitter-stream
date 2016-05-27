@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 ul.tweets {
   border: 1px solid #ccc;
   list-style-type: none;
@@ -19,3 +20,8 @@ ul.tweets > li.tweet > div.tweet-dttm {
   display: inline;
   margin: 10px;
 }
+=======
+body {
+  font-family: arial;
+}
+>>>>>>> Stashed changes
