@@ -7,3 +7,7 @@ div.account {
    float:right;
    display:inline;
 }
+
+span.noun {
+  text-decoration: underline;
+}
