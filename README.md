@@ -1,8 +1,10 @@
 #TwitterStream
 
 Requires npm container
-`meteor add meteorhacks:npm`
-`meteor add materialize:materialize`
+```
+meteor add meteorhacks:npm
+meteor add materialize:materialize
+```
 
 Add `private/twitter.json` with the relevant twitter credentials.
 ```
