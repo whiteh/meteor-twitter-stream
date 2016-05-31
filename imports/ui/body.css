@@ -6,11 +6,8 @@ div.account {
     margin-top: 20px;
    float:right;
    display:inline;
-<<<<<<< HEAD
 }
 
-span.noun {
+span.noun, span.actor {
   text-decoration: underline;
-=======
->>>>>>> 0e01c47e72ca3f9b0dacc5e21a9a3f5d7311b6b3
 }
