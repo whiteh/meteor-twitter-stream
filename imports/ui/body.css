@@ -1,3 +1,6 @@
+body {
+  background-color: #fcfcfc;
+}
 h1{
   width:20%;
   display:inline;
@@ -10,4 +13,8 @@ div.account {
 
 span.noun, span.actor {
   text-decoration: underline;
+}
+li.tweet > span.card-title >span.tweet-author {
+  display: inline;
+  margin-left: 50px;
 }

@@ -6,7 +6,7 @@
     </div>
 
     {{#if currentUser }}
-      <ul class="collection tweets">
+      <ul class="tweets">
         {{#each tweets}}
           {{> tweet}}
         {{/each}}
@@ -20,12 +20,15 @@
 </body>
 
 <template name="tweet">
-  <li class="collection-item avatar">
-    <img src="{{user.profile_image_url_https}}" alt="" class="circle">
+  <li class="tweet card blue-grey darken-1">
+    <div class="card-content white-text">
+      <div class = "card-title"><img src="{{user.profile_image_url_https}}" alt="" class="circle"><span class='tweet-author'>{{user.name}}</span></div>
+
       {{#each terms}}
       <span class='title'><span class='{{tag}}'>{{text}}</span></span>
       {{/each}}
-    <div class='tweet-author'>{{user.name}}</div>
+
     <div class='tweet-dttm'>{{created_at}}</div>
+    </div>
   </li>
 </template>
