@@ -18,6 +18,5 @@ Add `private/twitter.json` with the relevant twitter credentials.
          "key": "xxx",
          "secret": "xxx"
      },
-<<<<<<< HEAD
  }
  ```
