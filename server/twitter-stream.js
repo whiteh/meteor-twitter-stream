@@ -62,7 +62,7 @@ if (Meteor.isServer) {
         access_token: access_token,
         access_token_secret: access_token_secret
       });
-      test = T.get('statuses/home_timeline', { screen_name: "whitehankey"  })
+      test = T.get('statuses/home_timeline', { /*screen_name: "whitehankey", */count:100  })
         .catch(function (err) {
           console.log('caught error', err.stack)
         })
@@ -86,19 +86,9 @@ if (Meteor.isServer) {
     });
     ServiceConfiguration.configurations.insert({
       service: "twitter",
-      consumerKey: "TETpdGc8UUDTl6bzLpXhAtGVv",
+      consumerKey: conf.consumer.key,
       loginStyle: "popup",
-      secret: "CkDDaaKielMfVokauIoO392p6etJydDJWa4k9ccgy6u54yBzeI"
+      secret: conf.consumer.secret
     });
-
-/*
-    var stream =  T.stream("statuses/filter",
-              {
-                "lang" : "en-gb",
-                "track": "facup"
-              });
-    stream.on("tweet", Meteor.bindEnvironment(function(data){
-      Meteor.call("handleTweet", data);
-    }));*/
   });
 }

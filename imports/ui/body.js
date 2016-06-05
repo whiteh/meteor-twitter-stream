@@ -1,21 +1,21 @@
 import { Template } from 'meteor/templating';
-
-import { Tweets } from '../api/tweets.js';
+import { util } from   '../api/util.js';
 
 import './body.html';
 import './body.css';
 
+
+Template.body.inital = true;
 Template.body.helpers({
   tweets() {
-    if (Meteor.userId()) {
-      console.log(Tweets.findOne({}))
-      return Tweets.find({ rel_users: Meteor.userId() }, {sort :{created_at: 1}});
-    } else {
-      return [{
-        text: "None"
-      }]
-    }
+    tweets = util.getTweets();
+    console.log(util.getWords());
+    return tweets;
   },
+  words() {
+    var words = util.getWords();
+    return words;
+  }
 });
 
 Tracker.autorun(function(){

@@ -13,8 +13,10 @@
             {{/each}}
           </ul>
          </div>
-         <div class="col s5">
-           This is a test
+         <div id="term-cloud" class="col s5">
+           {{#each words}}
+             {{> word}}
+           {{/each}}
         </div>
       </div>
     {{else}}
@@ -24,6 +26,10 @@
 
   </div>
 </body>
+
+<template name="word">
+  <span style="font-size:{{count}}px">{{ word }}</span>
+</template>
 
 <template name="tweet">
   <li class="tweet card blue-grey darken-1">

@@ -11,6 +11,11 @@ div.account {
    display:inline;
 }
 
+div#term-cloud {
+  border: 1px solid #000;
+  margin-top: 20px;
+}
+
 span.noun, span.actor {
   text-decoration: underline;
 }
